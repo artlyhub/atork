@@ -6,7 +6,12 @@ SECRET_KEY = 'jyw@+p39b9_fq@cvfmga#p$r3^cd)4-rohcr@rotbqf^fqm(n&'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '127.0.1.1']
+ALLOWED_HOSTS = [
+    'artly.kr',
+    'www.artly.kr',
+    '127.0.0.1',
+    '127.0.1.1'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -16,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'accounts',
+    # 'accounts',
     'crowdfund',
     'restapi',
 ]
@@ -51,10 +56,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'atork.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'atork',
+        'USER': 'artly',
+        'PASSWORD': 'artlyartsdawg!1',
+        'HOST': '198.13.46.185',
+        'PORT': '',
     }
 }
 
